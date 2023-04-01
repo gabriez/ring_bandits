@@ -1,0 +1,13 @@
+/* Information bar */
+
+.information_bar {
+    height: 52px;
+}
+
+.info_text {
+    color: #8A8A8A;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 140%;
+}

@@ -1,0 +1,62 @@
+<section class="information_bar">
+  <div class="info_block">
+    {% render 'icons_bandits', icon: 'ring' %}
+    <span class="info_text">
+      {{ section.settings.text_1 }}
+    </span>
+  </div>
+  <div class="info_block">
+    {% render 'icons_bandits', icon: 'wallet' %}
+    <span class="info_text">
+      {{ section.settings.text_2 }}
+    </span>
+  </div>
+  <div class="info_block">
+    {% render 'icons_bandits', icon: 'water' %}
+    <span class="info_text">
+      {{ section.settings.text_3 }}
+    </span>
+  </div>
+  <div class="info_block">
+    {% render 'icons_bandits', icon: 'small-heart' %}
+    <span class="info_text">
+      {{ section.settings.text_4 }}
+    </span>
+  </div>
+
+  <a class="prev-button-slider"></a>
+  <a class="next-button-slider"></a>
+</section>
+{% schema %}
+  {
+    "name": "Information_bar_liquid",
+    "settings": [
+      {
+        "type": "text",
+        "id": "text_1",
+        "label": "Text for first icon",
+        "default": "Protect your Jewelry"
+      }, {
+        "type": "text",
+        "id": "text_2",
+        "label": "Text for first icon",
+        "default": "Protect your Jewelry"
+      }, {
+        "type": "text",
+        "id": "text_3",
+        "label": "Text for first icon",
+        "default": "Protect your Jewelry"
+      }, {
+        "type": "text",
+        "id": "text_4",
+        "label": "Text for first icon",
+        "default": "Protect your Jewelry"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Information_bar_liquid"
+      }
+    ]
+  }
+{% endschema %}
