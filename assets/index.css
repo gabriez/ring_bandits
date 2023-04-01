@@ -2,6 +2,9 @@
 
 .information_bar {
     height: 52px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .info_text {
