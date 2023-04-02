@@ -9,6 +9,7 @@
     justify-content: space-evenly;
     align-items: center;
     width: 1152px;
+    margin: auto;
 }
 
 .info_block {
