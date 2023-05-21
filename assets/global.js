@@ -952,3 +952,13 @@ customElements.define('product-recommendations', ProductRecommendations);
 //----------------------GABO FUNCTIONS---------------------------------------------------
 //---------------------------------------------------------------------------------------
 
+
+
+
+
+
+// class SliderSelfMade extends HTMLElement {
+//   constructor(){
+
+//   }
+// }
