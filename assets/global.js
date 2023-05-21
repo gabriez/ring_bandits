@@ -970,7 +970,7 @@ let sliderContainerFreeSpace = sliderContainerWidth - totalSlidesWidth;
 
 
 for (let i = 0; i < slides.length; i++) {
-  slides[i].style.left = `${sliderContainerFreeSpace + slides[i-1].clientWidth}px`
+  slides[i].style.left = `${sliderContainerFreeSpace + (slides[i-1] != null ? slides[i-1].clientWidth : 0)}px`
 }
 
 let prevButton = document.getElementsByClassName('prev-button-slider')
