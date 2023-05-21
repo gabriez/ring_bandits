@@ -966,13 +966,13 @@ for( let slide of slides) {
   totalSlidesWidth += slide.clientWidth;
 }
 
-let sliderContainerFreeSpace = (sliderContainerWidth - totalSlidesWidth) / 4;
+let sliderContainerFreeSpace = (sliderContainerWidth - totalSlidesWidth) / slides.length;
 
 
 for (let i = 0; i < slides.length; i++) {
 
   console.log(i, slides, slides[i-1]); 
-   slides[i].style.left = `${(sliderContainerFreeSpace / 4) + (slides[i-1] != undefined? slides[i-1].clientWidth : 0)}px`;
+   slides[i].style.left = `${sliderContainerFreeSpace + (slides[i-1] != undefined? slides[i-1].clientWidth : 0)}px`;
   // console.log(`${sliderContainerFreeSpace + (slides[i-1].clientWidth != undefined? slides[i-1].clientWidth : 0)}px`);
 }
 
