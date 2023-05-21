@@ -971,8 +971,8 @@ let sliderContainerFreeSpace = sliderContainerWidth - totalSlidesWidth;
 console.log(sliderContainerFreeSpace);
 for (let i = 0; i < 4; i++) {
 
-  console.log(i, slides, slides.length); 
-  slides[i].style.left = `${sliderContainerFreeSpace + (slides[i-1] != undefined? slides[i-1].clientWidth : 0)}px`;
+  console.log(i, slides, slides[i-1]); 
+  // slides[i].style.left = `${sliderContainerFreeSpace + (slides[i-1] != undefined? slides[i-1].clientWidth : 0)}px`;
   console.log(`${sliderContainerFreeSpace + (slides[i-1].clientWidth != undefined? slides[i-1].clientWidth : 0)}px`);
 }
 
