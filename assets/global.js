@@ -953,8 +953,25 @@ customElements.define('product-recommendations', ProductRecommendations);
 //---------------------------------------------------------------------------------------
 
 
+const changeSlidePosition = (slidesFunction) => {
+
+}
+
 let sliderTest = document.getElementsByClassName('slider-information');
+let sliderContainerWidth = sliderTest.clientWidth;
+
 let slides = document.getElementsByClassName('slide');
+let totalSlidesWidth = 0;
+for( let slide of slides) {
+  totalSlidesWidth += slide.clientWidth;
+}
+
+let sliderContainerFreeSpace = sliderContainerWidth - totalSlidesWidth;
+
+
+for (let i = 0; i < slides.length; i++) {
+  slides[i].style.left = `${sliderContainerFreeSpace + slides[i-1].clientWidth}px`
+}
 
 let prevButton = document.getElementsByClassName('prev-button-slider')
 let nextButton = document.getElementsByClassName('next-button-slider')
