@@ -953,6 +953,11 @@ customElements.define('product-recommendations', ProductRecommendations);
 //---------------------------------------------------------------------------------------
 
 
+let sliderTest = document.getElementsByClassName('slider-information');
+let slides = document.getElementsByClassName('slide');
+
+let prevButton = document.getElementsByClassName('prev-button-slider')
+let nextButton = document.getElementsByClassName('next-button-slider')
 
 
 
