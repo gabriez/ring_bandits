@@ -971,8 +971,9 @@ let sliderContainerFreeSpace = (sliderContainerWidth - totalSlidesWidth) / slide
 
 for (let i = 0; i < slides.length; i++) {
 
-  console.log(i, slides, slides[i-1]); 
-   slides[i].style.left = `${sliderContainerFreeSpace + (slides[i-1] != undefined? slides[i-1].clientWidth : 0)}px`;
+  
+   slides[i].style.left = `${sliderContainerFreeSpace}px`;
+   sliderContainerFreeSpace += sliderContainerFreeSpace + slides[i].clientWidth;
   // console.log(`${sliderContainerFreeSpace + (slides[i-1].clientWidth != undefined? slides[i-1].clientWidth : 0)}px`);
 }
 
