@@ -35,7 +35,8 @@
 }
 
 .slide {
-    position: absolute
+    position: absolute;
+    padding: 0 57px;
 }
 
 .info_block svg {
