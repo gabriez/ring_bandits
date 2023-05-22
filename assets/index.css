@@ -3,6 +3,7 @@
     width: 100%;
     display: flex;
     position: relative;
+    justify-content: center;
 }
 
 .info_block_container {
