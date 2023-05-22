@@ -1,29 +1,30 @@
 <section class="information_bar">
     <div class="info_block_container" id="slider-information-container">
-
-        <div class="info_block slide">
-            {% render 'icons_bandits', icon: 'ring' %}
-            <span class="info_text">
-                {{ section.settings.text_1 }}
-            </span>
-        </div>
-        <div class="info_block slide">
-            {% render 'icons_bandits', icon: 'wallet' %}
-            <span class="info_text">
-                {{ section.settings.text_2 }}
-            </span>
-        </div>
-        <div class="info_block slide">
-            {% render 'icons_bandits', icon: 'water' %}
-            <span class="info_text">
-                {{ section.settings.text_3 }}
-            </span>
-        </div>
-        <div class="info_block slide">
-            {% render 'icons_bandits', icon: 'small-heart' %}
-            <span class="info_text">
-                {{ section.settings.text_4 }}
-            </span>
+        <div class="slider_container">
+            <div class="info_block slide">
+                {% render 'icons_bandits', icon: 'ring' %}
+                <span class="info_text">
+                    {{ section.settings.text_1 }}
+                </span>
+            </div>
+            <div class="info_block slide">
+                {% render 'icons_bandits', icon: 'wallet' %}
+                <span class="info_text">
+                    {{ section.settings.text_2 }}
+                </span>
+            </div>
+            <div class="info_block slide">
+                {% render 'icons_bandits', icon: 'water' %}
+                <span class="info_text">
+                    {{ section.settings.text_3 }}
+                </span>
+            </div>
+            <div class="info_block slide">
+                {% render 'icons_bandits', icon: 'small-heart' %}
+                <span class="info_text">
+                    {{ section.settings.text_4 }}
+                </span>
+            </div>
         </div>
     </div>
     <button class="prev-button-slider button-slider"></button>
