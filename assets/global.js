@@ -966,7 +966,7 @@ for( let slide of slides) {
   totalSlidesWidth += slide.clientWidth;
 }
 
-// let sliderContainerFreeSpace = (sliderContainerWidth - totalSlidesWidth) / (slides.length * 2);
+let sliderContainerFreeSpace = (sliderContainerWidth - totalSlidesWidth) / (slides.length * 2);
 let sliderWidthPercentage = 0;
 
 for (let i = 0; i < slides.length; i++) {
@@ -974,7 +974,11 @@ for (let i = 0; i < slides.length; i++) {
 
  // if (i > 0) sliderContainerFreeSpace += (sliderContainerWidth - totalSlidesWidth) / slides.length; 
 
-  slides[i].style.left =  `${sliderWidthPercentage}%`; // `${sliderContainerFreeSpace}px`;
+  //slides[i].style.left =  ; // `${sliderContainerFreeSpace}px`;
+  slider[i].style = {
+    left: `${sliderWidthPercentage}%`,
+    padding: `0 ${sliderContainerFreeSpace}px`
+  }
   sliderWidthPercentage +=  slides[i].clientWidth * 100 / sliderContainerWidth; 
 
  // sliderContainerFreeSpace = sliderContainerFreeSpace + slides[i].clientWidth;
