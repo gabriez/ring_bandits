@@ -972,15 +972,11 @@ let sliderContainerFreeSpace = (sliderContainerWidth - totalSlidesWidth) / slide
 for (let i = 0; i < slides.length; i++) {
 
 
-    sliderContainerFreeSpace += (sliderContainerWidth - totalSlidesWidth) / slides.length 
-    console.log(sliderContainerFreeSpace, true);
+  sliderContainerFreeSpace += (sliderContainerWidth - totalSlidesWidth) / slides.length 
 
+  slides[i].style.left = `${sliderContainerFreeSpace}px`;
 
-   slides[i].style.left = `${sliderContainerFreeSpace}px`;
-
-   
-    sliderContainerFreeSpace = sliderContainerFreeSpace + slides[i].clientWidth;
-    console.log(sliderContainerFreeSpace, false);
+  sliderContainerFreeSpace = sliderContainerFreeSpace + slides[i].clientWidth;
    
    
    
