@@ -963,9 +963,9 @@ let sliderContainerWidth = 1152;
 let slides = document.getElementsByClassName('slide');
 let totalSlidesWidth = 0;
 for( let slide of slides) {
-  totalSlidesWidth += slide.clientWidth;
+  totalSlidesWidth += slide.offsetWidth ;
 
-  console.log(slide.clientWidth);
+  console.log(slide.offsetWidth );
 }
 console.log(totalSlidesWidth);
 let sliderContainerFreeSpace = (sliderContainerWidth - totalSlidesWidth) / slides.length;
