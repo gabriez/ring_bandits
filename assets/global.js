@@ -971,7 +971,7 @@ let sliderWidthPercentage = 0;
 
 for (let i = 0; i < slides.length; i++) {
 
-  // if (slides[i - 1] != undefined) 
+
  // if (i > 0) sliderContainerFreeSpace += (sliderContainerWidth - totalSlidesWidth) / slides.length; 
 
   slides[i].style.left =  `${sliderWidthPercentage}%`; // `${sliderContainerFreeSpace}px`;
