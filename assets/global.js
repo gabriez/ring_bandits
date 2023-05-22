@@ -963,12 +963,12 @@ let sliderContainerWidth = 1152;
 let slides = document.getElementsByClassName('slide');
 let totalSlidesWidth = 0;
 for( let slide of slides) {
-  totalSlidesWidth += slide.offsetWidth ;
+  totalSlidesWidth += slide.clientWidth ;
 
-  console.log(slide.offsetWidth );
+  console.log(slide.clientWidth );
 }
 console.log(totalSlidesWidth);
-let sliderContainerFreeSpace = (sliderContainerWidth - totalSlidesWidth) / slides.length;
+let sliderContainerFreeSpace = (sliderContainerWidth - totalSlidesWidth) / (slides.length * 2);
 console.log(sliderContainerWidth - totalSlidesWidth);
 let sliderWidthPercentage = 0;
 
