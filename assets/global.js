@@ -966,16 +966,17 @@ for( let slide of slides) {
   totalSlidesWidth += slide.clientWidth;
 }
 
-let sliderContainerFreeSpace = (sliderContainerWidth - totalSlidesWidth) / (slides.length * 2);
-
+// let sliderContainerFreeSpace = (sliderContainerWidth - totalSlidesWidth) / (slides.length * 2);
+let sliderWidthPercentage = 0;
 
 for (let i = 0; i < slides.length; i++) {
 
-  if (i > 0) sliderContainerFreeSpace += (sliderContainerWidth - totalSlidesWidth) / slides.length; 
+  // if (slides[i - 1] != undefined) 
+ // if (i > 0) sliderContainerFreeSpace += (sliderContainerWidth - totalSlidesWidth) / slides.length; 
 
-  slides[i].style.left = `${sliderContainerFreeSpace}px`;
-
-  sliderContainerFreeSpace = sliderContainerFreeSpace + slides[i].clientWidth;
+  slides[i].style.left =  `${sliderWidthPercentage}%`; // `${sliderContainerFreeSpace}px`;
+  sliderWidthPercentage +=  slides[i] * 100 / sliderContainerWidth; 
+ // sliderContainerFreeSpace = sliderContainerFreeSpace + slides[i].clientWidth;
    
 }
 
