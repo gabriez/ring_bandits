@@ -25,6 +25,10 @@
     position: relative;
 }
 
+.slider_container {
+    width: fit-content;
+}
+
 .info_block {
     display: flex;
     justify-content: center;
@@ -36,7 +40,6 @@
 
 .slide {
     position: absolute;
-  /*  padding: 0 57px;*/
 }
 
 .info_block svg {
