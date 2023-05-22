@@ -958,16 +958,18 @@ const changeSlidePosition = (slidesFunction) => {
 }
 
 let sliderTest = document.getElementById('slider-information-container');
-let sliderContainerWidth = sliderTest.offsetWidth;
-
+let sliderTestWidth = sliderTest.offsetWidth;
+let sliderContainer = document.getElementsByClassName('.slider_container')
 let slides = document.getElementsByClassName('slide');
 let totalSlidesWidth = 0;
+sliderContainer.style.height = `${slides[0].clientHeight}px`
+
 for( let slide of slides) {
   totalSlidesWidth += slide.clientWidth ;
 
 }
 
-let sliderContainerFreeSpace = (sliderContainerWidth - totalSlidesWidth) / (slides.length * 2);
+let sliderContainerFreeSpace = (sliderTestWidth - totalSlidesWidth) / (slides.length * 2);
 
 let sliderWidthPercentage = 0;
 
@@ -979,7 +981,7 @@ for (let i = 0; i < slides.length; i++) {
   slides[i].style.left = `${sliderWidthPercentage}%`; // `${sliderContainerFreeSpace}px`;
   slides[i].style.padding = `0 ${sliderContainerFreeSpace}px`;
   
-  sliderWidthPercentage +=  slides[i].clientWidth * 100 / sliderContainerWidth; 
+  sliderWidthPercentage +=  slides[i].clientWidth * 100 / sliderTestWidth; 
 
  // sliderContainerFreeSpace = sliderContainerFreeSpace + slides[i].clientWidth;
    
