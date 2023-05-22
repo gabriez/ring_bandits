@@ -975,7 +975,8 @@ for (let i = 0; i < slides.length; i++) {
  // if (i > 0) sliderContainerFreeSpace += (sliderContainerWidth - totalSlidesWidth) / slides.length; 
 
   slides[i].style.left =  `${sliderWidthPercentage}%`; // `${sliderContainerFreeSpace}px`;
-  sliderWidthPercentage +=  slides[i] * 100 / sliderContainerWidth; 
+  sliderWidthPercentage +=  slides[i].clientWidth * 100 / sliderContainerWidth; 
+
  // sliderContainerFreeSpace = sliderContainerFreeSpace + slides[i].clientWidth;
    
 }
