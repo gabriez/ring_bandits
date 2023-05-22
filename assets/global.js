@@ -957,8 +957,8 @@ const changeSlidePosition = (slidesFunction) => {
 
 }
 
-//let sliderTest = document.getElementById('slider-information-container');
-let sliderContainerWidth = 1152;
+let sliderTest = document.getElementById('slider-information-container');
+let sliderContainerWidth = sliderTest.clientWidth;
 
 let slides = document.getElementsByClassName('slide');
 let totalSlidesWidth = 0;
