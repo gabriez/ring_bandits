@@ -1,4 +1,8 @@
 /* Information bar */
+
+body {
+    overflow: hidden;
+}
 .information_bar {
     width: 100%;
 }
@@ -26,9 +30,7 @@
     width: 100%;
     height: 52px;
 }
-.slider_viewport{
-    overflow: hidden;
-}
+
 .slide {
     position: absolute;
 }
