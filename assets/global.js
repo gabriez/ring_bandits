@@ -967,7 +967,7 @@ for( let slide of slides) {
 }
 
 let sliderContainerFreeSpace = (sliderContainerWidth - totalSlidesWidth) / slides.length;
-console.log(sliderContainerFreeSpace);
+console.log(sliderContainerWidth - totalSlidesWidth);
 let sliderWidthPercentage = 0;
 
 for (let i = 0; i < slides.length; i++) {
