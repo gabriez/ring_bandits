@@ -971,7 +971,7 @@ let sliderContainerFreeSpace = (sliderContainerWidth - totalSlidesWidth) / slide
 
 for (let i = 0; i < slides.length; i++) {
 
-  sliderContainerFreeSpace += (sliderContainerWidth - totalSlidesWidth) / slides.length 
+  if (i > 0) sliderContainerFreeSpace += (sliderContainerWidth - totalSlidesWidth) / slides.length; 
 
   slides[i].style.left = `${sliderContainerFreeSpace}px`;
 
