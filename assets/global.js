@@ -963,7 +963,7 @@ let sliderTestWidth = sliderTest.clientWidth;
 let sliderContainer = document.getElementsByClassName('.slider_container')
 let slides = document.getElementsByClassName('slide');
 let totalSlidesWidth = 0;
-sliderContainer.style.height = `${slides[0].clientHeight}px`
+sliderContainer[0].style.height = `${slides[0].clientHeight}px`
 
 for( let slide of slides) {
   totalSlidesWidth += slide.clientWidth ;
