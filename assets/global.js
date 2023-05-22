@@ -974,9 +974,10 @@ for (let i = 0; i < slides.length; i++) {
    if (i > 0) {
     sliderContainerFreeSpace = sliderContainerFreeSpace + slides[i].clientWidth;
    }  
+
    slides[i].style.left = `${sliderContainerFreeSpace}px`;
 
-   if ( i == 0) {
+   if ( i === 0) {
     sliderContainerFreeSpace = sliderContainerFreeSpace + slides[i].clientWidth;
    }
    
