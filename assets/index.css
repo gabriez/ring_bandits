@@ -21,7 +21,7 @@
 .flex-button {
     position: absolute;
 }
-.slider-information{
+#slider-information-container{
     position: relative;
 }
 
