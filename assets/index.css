@@ -1,7 +1,7 @@
 /* Information bar */
 .information_bar {
     width: 100%;
-    height: min-content;
+    display: flex;
 }
 
 .info_block_container {
