@@ -4,7 +4,7 @@
     display: flex;
     position: relative;
     justify-content: center;
-    overflow: hidden;
+   
 }
 
 .info_block_container {
@@ -15,7 +15,7 @@
     width: 1152px;
     border-bottom: 2px solid #8A8A8A;
     scroll-behavior: smooth;
-    
+    overflow: hidden;   
 }
 
 .flex-button {
@@ -26,7 +26,7 @@
 }
 
 .slider_container {
-    width: fit-content;
+    position: relative;
 }
 
 .info_block {
