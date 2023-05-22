@@ -971,9 +971,15 @@ let sliderContainerFreeSpace = (sliderContainerWidth - totalSlidesWidth) / slide
 
 for (let i = 0; i < slides.length; i++) {
 
-  
+   if (i > 0) {
+    sliderContainerFreeSpace = sliderContainerFreeSpace + slides[i].clientWidth;
+   }  
    slides[i].style.left = `${sliderContainerFreeSpace}px`;
-   sliderContainerFreeSpace = ( 2 * sliderContainerFreeSpace) + slides[i].clientWidth;
+
+   if ( i == 0) {
+    sliderContainerFreeSpace = sliderContainerFreeSpace + slides[i].clientWidth;
+   }
+   
    console.log(sliderContainerFreeSpace);
   // console.log(`${sliderContainerFreeSpace + (slides[i-1].clientWidth != undefined? slides[i-1].clientWidth : 0)}px`);
 }
