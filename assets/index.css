@@ -25,6 +25,10 @@ body {
     position: relative;
 }
 
+.slider_viewport{
+    height: fit-content;
+}
+
 .slider_container {
     position: absolute;
     width: 100%;
