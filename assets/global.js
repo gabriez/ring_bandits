@@ -966,8 +966,7 @@ let totalSlidesWidth = 0;
 sliderContainer[0].style.height = `${slides[0].clientHeight}px`
 
 for( let slide of slides) {
-  totalSlidesWidth += slide.clientWidth ;
-
+  totalSlidesWidth += slide.clientWidth;
 }
 
 let sliderContainerFreeSpace = (sliderTestWidth - totalSlidesWidth) / (slides.length * 2);
