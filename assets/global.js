@@ -959,6 +959,10 @@ const changeSlidePosition = (slidesMoving, slidesFunction, prev_next) => {
   let regexSelectedSlide = /selected_slide/;
 
   let elementIndex = elements.findIndex((item) => regexSelectedSlide.test(item.classname));
+
+  if (elementIndex == -1){
+    elements[0].classname += " selected_slide"
+  }
   if (prev_next) {
 
 
