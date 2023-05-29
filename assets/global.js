@@ -953,8 +953,18 @@ customElements.define('product-recommendations', ProductRecommendations);
 //---------------------------------------------------------------------------------------
 
 
-const changeSlidePosition = (slidesFunction) => {
+const changeSlidePosition = (slidesMoving, slidesFunction, prev_next) => {
+  let elementToMove = slidesFunction;
+  let elements = slidesMoving;
+  let regexSelectedSlide = /selected_slide/;
 
+  elements.findIndex((item) => regexSelectedSlide.test(item.classname));
+  if (prev_next) {
+
+
+    
+    elementToMove.style.transform = `translateY(%)`;
+  }
 }
 
 let sliderTest = document.getElementById('slider-information-container');
