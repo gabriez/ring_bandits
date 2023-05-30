@@ -5,6 +5,7 @@ body {
 }
 .information_bar {
     width: 100%;
+    position: relative;
 }
 
 .info_block_container {
