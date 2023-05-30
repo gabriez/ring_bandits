@@ -1008,7 +1008,7 @@ for (let i = 0; i < slides.length; i++) {
 let prevButton = document.getElementsByClassName('prev-button-slider')
 let nextButton = document.getElementsByClassName('next-button-slider')
 
-
+prevButton.addEventListener('click', changeSlidePosition(slides, sliderContainer, false))
 
 
 // class SliderSelfMade extends HTMLElement {
