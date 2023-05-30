@@ -1010,8 +1010,8 @@ for (let i = 0; i < slides.length; i++) {
 let prevButton = document.getElementsByClassName('prev-button-slider')
 let nextButton = document.getElementsByClassName('next-button-slider')
 
-prevButton[0].addEventListener('click', changeSlidePosition(slides, sliderContainer, false));
-nextButton[0].addEventListener('click', changeSlidePosition(slides, sliderContainer, true));
+prevButton[0].addEventListener('click', () => changeSlidePosition(slides, sliderContainer, false));
+nextButton[0].addEventListener('click', () => changeSlidePosition(slides, sliderContainer, true));
 
 // class SliderSelfMade extends HTMLElement {
 //   constructor(){
