@@ -957,7 +957,7 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
   let elementToMove = slideContainerMove;
   let elements = slidesMoving;
   let regexSelectedSlide = /selected_slide/;
-  console.log(elements);
+  console.log(elements, [0, 1, 2, 3, 4, 5]);
   let elementIndex = elements.findIndex((item) => regexSelectedSlide.test(item.className));
 
   if (elementIndex == -1){
