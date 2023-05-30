@@ -963,12 +963,12 @@ const changeSlidePosition = (slidesMoving, slidesFunction, prev_next) => {
   if (elementIndex == -1){
     elements[0].classname += " selected_slide";
   }
-  
-  if (prev_next) {
 
+  if (prev_next) {
+    
 
     
-    elementToMove.style.transform = `translateY(%)`;
+    elementToMove.style.transform = `translateY(-${elements[elementIndex] * 100 / elementToMove.clientWidth}%)`;
   }
 }
 
