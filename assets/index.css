@@ -62,3 +62,17 @@ body {
     font-size: 11px;
     line-height: 140%;
 }
+
+.prev-button-slider,
+.next-button-slider{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: blue;
+}
+.prev-button-slider{
+    top: 0;
+}
+.next-button-slider{
+    bottom: 0;
+}
