@@ -958,7 +958,7 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
   let elements = slidesMoving;
   let regexSelectedSlide = /selected_slide/;
   console.log(elements);
-  //let elementIndex = elements.findIndex((item) => regexSelectedSlide.test(item.classname));
+  //let elementIndex = elements.findIndex((item) => regexSelectedSlide.test(item.className));
 
   if (elementIndex == -1){
     elements[0].classname += " selected_slide";
@@ -967,10 +967,10 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
   }
 
   if (prev_next) {
-    elements[elementIndex + 1].classname += " selected_slide";
+    elements[elementIndex + 1].className += " selected_slide";
     elementToMove.style.transform = `translateY(-${elements[elementIndex + 1] * 100 / elementToMove.clientWidth}%)`;
   } else if (elementIndex > 0 && !prev_next) {
-    elements[elementIndex - 1].classname += " selected_slide";
+    elements[elementIndex - 1].className += " selected_slide";
     elementToMove.style.transform = `translateY(-${elements[elementIndex - 1] * 100 / elementToMove.clientWidth}%)`;
   }
 
