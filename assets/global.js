@@ -953,8 +953,8 @@ customElements.define('product-recommendations', ProductRecommendations);
 //---------------------------------------------------------------------------------------
 
 
-const changeSlidePosition = (slidesMoving, slidesFunction, prev_next) => {
-  let elementToMove = slidesFunction;
+const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
+  let elementToMove = slideContainerMove;
   let elements = slidesMoving;
   let regexSelectedSlide = /selected_slide/;
 
@@ -962,13 +962,15 @@ const changeSlidePosition = (slidesMoving, slidesFunction, prev_next) => {
 
   if (elementIndex == -1){
     elements[0].classname += " selected_slide";
+  } else {
+    elements[elementIndex].replace('selected_slide', '')
   }
 
   if (prev_next) {
-    
-
-    
-    elementToMove.style.transform = `translateY(-${elements[elementIndex] * 100 / elementToMove.clientWidth}%)`;
+    elements[elementIndex + 1].classname += " selected_slide";
+    elementToMove.style.transform = `translateY(-${elements[elementIndex + 1] * 100 / elementToMove.clientWidth}%)`;
+  } else if (elementIndex > 0 && !prev_next) {
+    elementToMove.style.transform = `translateY(-${elements[elementIndex - 1] * 100 / elementToMove.clientWidth}%)`;
   }
 }
 
