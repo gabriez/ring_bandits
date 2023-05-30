@@ -974,7 +974,7 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
     elementToMove.style.transform = `translateY(-${elements[elementIndex - 1] * 100 / elementToMove.clientWidth}%)`;
   }
 
-  console.log("hi");
+  console.log("hi", [0, 1, 2, 3, 4, 5]);
 }
 
 let sliderTest = document.getElementById('slider-information-container');
