@@ -968,7 +968,7 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
   if (elementIndex == -1){
     elements[0].className += " selected_slide";
   } else {
-    elements[elementIndex].replace('selected_slide', '')
+    elements[elementIndex].className.replace('selected_slide', '')
   }
 
   if (prev_next) {
