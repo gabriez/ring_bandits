@@ -970,6 +970,7 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
     elements[elementIndex + 1].classname += " selected_slide";
     elementToMove.style.transform = `translateY(-${elements[elementIndex + 1] * 100 / elementToMove.clientWidth}%)`;
   } else if (elementIndex > 0 && !prev_next) {
+    elements[elementIndex - 1].classname += " selected_slide";
     elementToMove.style.transform = `translateY(-${elements[elementIndex - 1] * 100 / elementToMove.clientWidth}%)`;
   }
 }
