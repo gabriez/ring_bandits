@@ -68,7 +68,7 @@ body {
     background: transparent;
     border: none;
     bottom: 50%;
-    transform: translateY(-50%)
+    transform: translateY(50%)
 }
 .prev-button-slider{
     left: 1%;
