@@ -959,6 +959,7 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
   let regexSelectedSlide = /selected_slide/;
   let elementIndex = -1;
   let spaceToMove = 0;
+  let elementsWidth = 0;
   for ( let i = 0; i < elements.length; i++ ) {
       if (regexSelectedSlide.test(elements[i].className)){
         elementIndex = i;
@@ -969,13 +970,21 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
   if (elementIndex > -1 && elementIndex != elements.length - 1 ){
     elements[elementIndex].className = elements[elementIndex].className.replace(/ selected_slide/, '');
     if (prev_next) {
-      spaceToMove = elements[elementIndex + 1].clientWidth * 100 / elementToMove[0].clientWidth;
+      for (let i = 0; i <= elementIndex + 1; i++) {
+        elementsWidth += elements[i].clientWidth;
+      }
+
+      spaceToMove = elementsWidth * 100 / elementToMove[0].clientWidth;
       elements[elementIndex + 1].className += " selected_slide";
       elementToMove[0].style.transform = `translateX(-${spaceToMove}%)`;
       console.log(elementToMove[0].style.transform);
     } else if (elementIndex > 0 && !prev_next) {
       if (elementIndex > 1) {
-        spaceToMove = elements[elementIndex - 1].clientWidth * 100 / elementToMove[0].clientWidth
+        for (let i = 0; i <= elementIndex - 1; i++) {
+          elementsWidth += elements[i].clientWidth;
+        }
+
+        spaceToMove = elementsWidth * 100 / elementToMove[0].clientWidth
         elementToMove[0].style.transform = `translateX(${spaceToMove}%)`;
       } else {
         elementToMove[0].style.transform = `translateX(0%)`;
