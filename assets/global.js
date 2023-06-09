@@ -968,7 +968,6 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
   }
 
   if (elementIndex > -1 && elementIndex < elements.length ){
-   // elements[elementIndex].className = elementIndex == 0 ? elements[elementIndex].className.replace(/ selected_slide/, '') : elements[elementIndex].className;
     if (prev_next && elementIndex != elements.length - 1) {
       elements[elementIndex].className = elements[elementIndex].className.replace(regexSelectedSlide, '');
       for (let i = 0; i < elementIndex + 1; i++) {
@@ -1030,6 +1029,9 @@ let nextButton = document.getElementsByClassName('next-button-slider')
 
 prevButton[0].addEventListener('click', () => changeSlidePosition(slides, sliderContainer, false));
 nextButton[0].addEventListener('click', () => changeSlidePosition(slides, sliderContainer, true));
+
+
+
 
 // class SliderSelfMade extends HTMLElement {
 //   constructor(){
