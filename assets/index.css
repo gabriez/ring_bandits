@@ -71,8 +71,8 @@ body {
     transform: translateY(-50%)
 }
 .prev-button-slider{
-    left: 2%;
+    left: 1%;
 }
 .next-button-slider{
-    right: 2%;
+    right: 1%;
 }
