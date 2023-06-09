@@ -982,7 +982,7 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
       if (elementIndex > 0 ) {
         elements[elementIndex].className = elements[elementIndex].className.replace(/ selected_slide/, '');
         elements[elementIndex - 1].className += " selected_slide";
-        for (let i = 0; i < elementIndex - 2; i++) {
+        for (let i = 0; i < elementIndex - 1; i++) {
           elementsWidth += elements[i].clientWidth;
         }
         spaceToMove = elementsWidth * 100 / elementToMove[0].clientWidth
