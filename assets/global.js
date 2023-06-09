@@ -968,6 +968,7 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
   if (elementIndex > -1){
     console.log('is executing')
     elements[elementIndex].className = elements[elementIndex].className.replace(/ selected_slide/, '');
+    console.log(elements[elementIndex].className);
     if (prev_next) {
       elements[elementIndex + 1].className += " selected_slide";
       elementToMove.style.transform = `translateX(-${elements[elementIndex + 1] * 100 / elementToMove.clientWidth}%)`;
