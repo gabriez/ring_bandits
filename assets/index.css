@@ -67,8 +67,7 @@ body {
 .prev-button-slider,
 .next-button-slider{
     position: absolute;
-    width: 15px;
-    height: 15px;
+
     background: transparent;
     border: none;
     display: flex;
