@@ -969,11 +969,11 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
     elements[elementIndex].className = elements[elementIndex].className.replace(/ selected_slide/, '');
     if (prev_next) {
       elements[elementIndex + 1].className += " selected_slide";
-      elementToMove.style.transform = `translateX(-${elements[elementIndex + 1] * 100 / elementToMove.clientWidth}%)`;
+      elementToMove[0].style.transform = `translateX(-${elements[elementIndex + 1] * 100 / elementToMove.clientWidth}%)`;
       console.log(elementIndex);
     } else if (elementIndex > 0 && !prev_next) {
       elements[elementIndex - 1].className += " selected_slide";
-      elementToMove.style.transform = `translateX(${elements[elementIndex - 1] * 100 / elementToMove.clientWidth}%)`;
+      elementToMove[0].style.transform = `translateX(${elements[elementIndex - 1] * 100 / elementToMove.clientWidth}%)`;
     }
   } else {
     elements[0].className += " selected_slide";
