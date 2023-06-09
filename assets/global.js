@@ -955,7 +955,6 @@ customElements.define('product-recommendations', ProductRecommendations);
 
 const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
   let elementToMove = slideContainerMove[0];
-  console.log(elementToMove.style.transform);
   let elements = slidesMoving;
   let regexSelectedSlide = /selected_slide/;
   let elementIndex = -1;
@@ -975,6 +974,7 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
   if (prev_next) {
     elements[elementIndex + 1].className += " selected_slide";
     elementToMove.style.transform = `translateY(-${elements[elementIndex + 1] * 100 / elementToMove.clientWidth}%)`;
+    console.log(elementToMove.style.transform);
   } else if (elementIndex > 0 && !prev_next) {
     elements[elementIndex - 1].className += " selected_slide";
     elementToMove.style.transform = `translateY(${elements[elementIndex - 1] * 100 / elementToMove.clientWidth}%)`;
