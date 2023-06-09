@@ -954,7 +954,7 @@ customElements.define('product-recommendations', ProductRecommendations);
 
 
 const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
-  let elementToMove = slideContainerMove;
+  let elementToMove = slideContainerMove[0];
   let elements = slidesMoving;
   let regexSelectedSlide = /selected_slide/;
   let elementIndex = -1;
@@ -975,9 +975,9 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
         elementsWidth += elements[i].clientWidth;
       }
 
-      spaceToMove = elementsWidth * 100 / elementToMove[0].clientWidth;
+      spaceToMove = elementsWidth * 100 / elementToMove.clientWidth;
       elements[elementIndex + 1].className += " selected_slide";
-      elementToMove[0].style.transform = `translateX(-${spaceToMove}%)`;
+      elementToMove.style.transform = `translateX(-${spaceToMove}%)`;
     } else if (!prev_next) {
       if (elementIndex > 0 ) {
         elements[elementIndex].className = elements[elementIndex].className.replace(/ selected_slide/, '');
@@ -985,10 +985,10 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
         for (let i = 0; i < elementIndex - 1; i++) {
           elementsWidth += elements[i].clientWidth;
         }
-        spaceToMove = elementsWidth * 100 / elementToMove[0].clientWidth
-        elementToMove[0].style.transform = `translateX(-${spaceToMove}%)`;
-        console.log(elementToMove[0].style.transform);
-      } else elementToMove[0].style.transform = `translateX(0%)`;
+        spaceToMove = elementsWidth * 100 / elementToMove.clientWidth
+        elementToMove.style.transform = `translateX(-${spaceToMove}%)`;
+        console.log(elementToMove.style.transform);
+      } else elementToMove.style.transform = `translateX(0%)`;
       
     }
   } 
