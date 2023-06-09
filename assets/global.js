@@ -989,9 +989,7 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
       } else elementToMove[0].style.transform = `translateX(0%)`;
       
     }
-  } else {
-    elements[0].className += " selected_slide";
-  }
+  } 
 }
 
 let sliderTest = document.getElementById('slider-information-container');
@@ -1014,9 +1012,10 @@ for (let i = 0; i < slides.length; i++) {
 
 
  // if (i > 0) sliderContainerFreeSpace += (sliderContainerWidth - totalSlidesWidth) / slides.length; 
-
+  if (i == 0) slides[i].className += " selected_slide";
   slides[i].style.left = `${sliderWidthPercentage}%`; // `${sliderContainerFreeSpace}px`;
   slides[i].style.padding = `0 ${sliderContainerFreeSpace}px`;
+
   
   sliderWidthPercentage +=  slides[i].clientWidth * 100 / sliderTestWidth; 
 
