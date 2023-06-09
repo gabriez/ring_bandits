@@ -69,6 +69,8 @@ body {
     position: absolute;
     width: 15px;
     height: 15px;
+    background: transparent;
+    border: none;
 }
 .prev-button-slider{
     top: 0;
