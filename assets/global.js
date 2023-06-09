@@ -956,7 +956,7 @@ customElements.define('product-recommendations', ProductRecommendations);
 const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
   let elementToMove = slideContainerMove[0];
   let elements = slidesMoving;
-  let regexSelectedSlide = /selected_slide/;
+  let regexSelectedSlide = / selected_slide/;
   let elementIndex = -1;
   let spaceToMove = 0;
   let elementsWidth = 0;
@@ -970,7 +970,7 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
   if (elementIndex > -1 && elementIndex < elements.length ){
    // elements[elementIndex].className = elementIndex == 0 ? elements[elementIndex].className.replace(/ selected_slide/, '') : elements[elementIndex].className;
     if (prev_next && elementIndex != elements.length - 1) {
-      elements[elementIndex].className = elements[elementIndex].className.replace(/ selected_slide/, '');
+      elements[elementIndex].className = elements[elementIndex].className.replace(regexSelectedSlide, '');
       for (let i = 0; i < elementIndex + 1; i++) {
         elementsWidth += elements[i].clientWidth;
       }
