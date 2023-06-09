@@ -970,10 +970,11 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
     if (prev_next) {
       elements[elementIndex + 1].className += " selected_slide";
       elementToMove[0].style.transform = `translateX(-${elements[elementIndex + 1] * 100 / elementToMove.clientWidth}%)`;
-      console.log(elementIndex);
+      console.log(elementToMove[0].style.transform);
     } else if (elementIndex > 0 && !prev_next) {
       elements[elementIndex - 1].className += " selected_slide";
       elementToMove[0].style.transform = `translateX(${elements[elementIndex - 1] * 100 / elementToMove.clientWidth}%)`;
+      console.log(elementToMove[0].style.transform);
     }
   } else {
     elements[0].className += " selected_slide";
