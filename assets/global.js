@@ -955,6 +955,7 @@ customElements.define('product-recommendations', ProductRecommendations);
 
 const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
   let elementToMove = slideContainerMove[0];
+  console.log(elementToMove);
   let elements = slidesMoving;
   let regexSelectedSlide = /selected_slide/;
   let elementIndex = -1;
