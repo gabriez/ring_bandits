@@ -964,12 +964,12 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
         i = elements.length;
       }
   }
-
+//${elements[elementIndex + 1] * 100 / elementToMove.clientWidth}
   if (elementIndex > -1 && elementIndex != elements.length - 1 ){
     elements[elementIndex].className = elements[elementIndex].className.replace(/ selected_slide/, '');
     if (prev_next) {
       elements[elementIndex + 1].className += " selected_slide";
-      elementToMove[0].style.transform = `translateX(-${elements[elementIndex + 1] * 100 / elementToMove.clientWidth}%)`;
+      elementToMove[0].style.transform = `translateX(-123%)`;
       console.log(elementToMove[0].style.transform);
     } else if (elementIndex > 0 && !prev_next) {
       elements[elementIndex - 1].className += " selected_slide";
