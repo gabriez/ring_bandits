@@ -968,21 +968,17 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
   if (elementIndex > -1){
     console.log('is executing')
     elements[elementIndex].className.replace(/ selected_slide/, '');
-      if (prev_next) {
-        elements[elementIndex + 1].className += " selected_slide";
-        elementToMove.style.transform = `translateX(-${elements[elementIndex + 1] * 100 / elementToMove.clientWidth}%)`;
-        console.log(elementIndex);
-      } else if (elementIndex > 0 && !prev_next) {
-        elements[elementIndex - 1].className += " selected_slide";
-        elementToMove.style.transform = `translateX(${elements[elementIndex - 1] * 100 / elementToMove.clientWidth}%)`;
-      }
+    if (prev_next) {
+      elements[elementIndex + 1].className += " selected_slide";
+      elementToMove.style.transform = `translateX(-${elements[elementIndex + 1] * 100 / elementToMove.clientWidth}%)`;
+      console.log(elementIndex);
+    } else if (elementIndex > 0 && !prev_next) {
+      elements[elementIndex - 1].className += " selected_slide";
+      elementToMove.style.transform = `translateX(${elements[elementIndex - 1] * 100 / elementToMove.clientWidth}%)`;
+    }
   } else {
     elements[0].className += " selected_slide";
   }
-
- 
-
-  console.log("hi", [0, 1, 2, 3, 4, 5]);
 }
 
 let sliderTest = document.getElementById('slider-information-container');
