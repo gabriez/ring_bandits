@@ -967,9 +967,10 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
       }
   }
 
-  if (elementIndex > -1 && elementIndex != elements.length - 1 ){
-    elements[elementIndex].className = elementIndex == 0 && prev_next ? elements[elementIndex].className.replace(/ selected_slide/, '') : elements[elementIndex].className;
-    if (prev_next) {
+  if (elementIndex > -1 && elementIndex < elements.length ){
+   // elements[elementIndex].className = elementIndex == 0 ? elements[elementIndex].className.replace(/ selected_slide/, '') : elements[elementIndex].className;
+    if (prev_next && elementIndex != elements.length - 1) {
+      elements[elementIndex].className = elements[elementIndex].className.replace(/ selected_slide/, '');
       for (let i = 0; i < elementIndex + 1; i++) {
         elementsWidth += elements[i].clientWidth;
       }
@@ -980,6 +981,7 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
       console.log(elementToMove[0].style.transform);
     } else if (!prev_next) {
       if (elementIndex != 0 ) {
+        elements[elementIndex].className = elements[elementIndex].className.replace(/ selected_slide/, '');
         elements[elementIndex - 1].className += " selected_slide";
         for (let i = 0; i > elementIndex - 1; i++) {
           elementsWidth += elements[i].clientWidth;
