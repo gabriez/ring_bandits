@@ -71,6 +71,8 @@ body {
     height: 15px;
     background: transparent;
     border: none;
+    display: flex;
+    justify-content: center;
 }
 .prev-button-slider{
     top: 0;
