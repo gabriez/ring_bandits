@@ -981,8 +981,6 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
         elementToMove[0].style.transform = `translateX(0%)`;
       }
       elements[elementIndex - 1].className += " selected_slide";
-      
-      console.log(elementToMove[0].style.transform);
     }
   } else {
     elements[0].className += " selected_slide";
