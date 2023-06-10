@@ -1040,8 +1040,7 @@ class SliderSelfMade extends HTMLElement {
         <div class="slider_container">
           ${slider_children_slides.map(item => item.outerHTML)}
         </div>
-      </div>
-    `;
+      </div>`;
   }
 
   changeSlidePosition() {
