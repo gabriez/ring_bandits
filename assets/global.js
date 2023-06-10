@@ -1014,11 +1014,11 @@ for (let i = 0; i < slides.length; i++) {
 
  // if (i > 0) sliderContainerFreeSpace += (sliderContainerWidth - totalSlidesWidth) / slides.length; 
   if (i == 0) slides[i].className += " selected_slide";
-  slides[i].style.left = `${sliderWidthPercentage}%`; // `${sliderContainerFreeSpace}px`;
+  slides[i].style.left = `${sliderWidthPercentage}px`; // `${sliderContainerFreeSpace}px`;
   //slides[i].style.padding = `0 ${sliderContainerFreeSpace}px`;
 
   
-  sliderWidthPercentage +=  slides[i].clientWidth * 100 / sliderTestWidth; 
+  sliderWidthPercentage +=  slides[i].clientWidth; 
 
  // sliderContainerFreeSpace = sliderContainerFreeSpace + slides[i].clientWidth;
    
