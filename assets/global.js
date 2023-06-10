@@ -1029,7 +1029,8 @@ nextButton[0].addEventListener('click', () => changeSlidePosition(slides, slider
 class SliderSelfMade extends HTMLElement {
   constructor(sliderContainer){
     this.slider_container = sliderContainer; 
-    
+    this.initSlider();
+    this.slider_move = document.getElementsByClassName('slider_move_container');
   }
 
   initSlider() {
@@ -1037,7 +1038,7 @@ class SliderSelfMade extends HTMLElement {
 
     this.slider_container.children = `
       <div class="slider_viewport">
-        <div class="slider_container">
+        <div class="slider_move_container">
           ${slider_children_slides.map(item => item.outerHTML)}
         </div>
       </div>`;
