@@ -1007,18 +1007,18 @@ for( let slide of slides) {
 
 let sliderContainerFreeSpace = (sliderTestWidth - totalSlidesWidth) / (slides.length * 2);
 
-let sliderWidthPercentage = 0;
+let distanceFromLeft = 0;
 
 for (let i = 0; i < slides.length; i++) {
 
 
  // if (i > 0) sliderContainerFreeSpace += (sliderContainerWidth - totalSlidesWidth) / slides.length; 
   if (i == 0) slides[i].className += " selected_slide";
-  slides[i].style.left = `${sliderWidthPercentage}px`; // `${sliderContainerFreeSpace}px`;
-  //slides[i].style.padding = `0 ${sliderContainerFreeSpace}px`;
+  slides[i].style.left = `${distanceFromLeft}px`; 
+
 
   
-  sliderWidthPercentage +=  slides[i].clientWidth; 
+  distanceFromLeft +=  slides[i].clientWidth; 
 
  // sliderContainerFreeSpace = sliderContainerFreeSpace + slides[i].clientWidth;
    
