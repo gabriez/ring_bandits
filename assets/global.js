@@ -993,10 +993,7 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
   } 
 }
 
-let sliderTest = document.getElementsByClassName('slider_viewport');
-let sliderTestWidth = sliderTest[0].clientWidth;
-
-let sliderContainer = document.getElementsByClassName('slider_container')
+let slider_move = document.getElementsByClassName('slider_container')
 let slides = document.getElementsByClassName('slide');
 let totalSlidesWidth = 0;
 sliderContainer[0].style.height = `${slides[0].clientHeight}px`
@@ -1004,8 +1001,6 @@ sliderContainer[0].style.height = `${slides[0].clientHeight}px`
 for( let slide of slides) {
   totalSlidesWidth += slide.clientWidth;
 }
-
-let sliderContainerFreeSpace = (sliderTestWidth - totalSlidesWidth) / (slides.length * 2);
 
 let distanceFromLeft = 0;
 
@@ -1025,14 +1020,67 @@ for (let i = 0; i < slides.length; i++) {
 let prevButton = document.getElementsByClassName('prev-button-slider')
 let nextButton = document.getElementsByClassName('next-button-slider')
 
-prevButton[0].addEventListener('click', () => changeSlidePosition(slides, sliderContainer, false));
-nextButton[0].addEventListener('click', () => changeSlidePosition(slides, sliderContainer, true));
+prevButton[0].addEventListener('click', () => changeSlidePosition(slides, slider_move, false));
+nextButton[0].addEventListener('click', () => changeSlidePosition(slides, slider_move, true));
 
 
 
 
-// class SliderSelfMade extends HTMLElement {
-//   constructor(){
+class SliderSelfMade extends HTMLElement {
+  constructor(sliderContainer){
+    this.slider_container = sliderContainer; 
+    
+  }
 
-//   }
-// }
+  initSlider() {
+    let slider_children_slides = this.slider_container.children;
+
+    this.slider_container.children = `
+      <div class="slider_viewport">
+        <div class="slider_container">
+          ${slider_children_slides.map(item => item.outerHTML)}
+        </div>
+      </div>
+    `;
+  }
+
+  changeSlidePosition() {
+    let elementToMove = slideContainerMove[0];
+    let elements = slidesMoving;
+    let regexSelectedSlide = / selected_slide/;
+    let elementIndex = -1;
+    let spaceToMove = 0;
+    let elementsWidth = 0;
+    for ( let i = 0; i < elements.length; i++ ) {
+        if (regexSelectedSlide.test(elements[i].className)){
+          elementIndex = i;
+          i = elements.length;
+        }
+    }
+
+    if (elementIndex > -1 && elementIndex < elements.length ){
+      if (prev_next && elementIndex != elements.length - 1) {
+        elements[elementIndex].className = elements[elementIndex].className.replace(regexSelectedSlide, '');
+        for (let i = 0; i < elementIndex + 1; i++) {
+          elementsWidth += elements[i].clientWidth;
+        }
+
+        spaceToMove = elementsWidth * 100 / elementToMove.clientWidth;
+        elements[elementIndex + 1].className += " selected_slide";
+        elementToMove.style.transform = `translateX(-${spaceToMove}%)`;
+      } else if (!prev_next) {
+        if (elementIndex > 0 ) {
+          elements[elementIndex].className = elements[elementIndex].className.replace(/ selected_slide/, '');
+          elements[elementIndex - 1].className += " selected_slide";
+          for (let i = 0; i < elementIndex - 1; i++) {
+            elementsWidth += elements[i].clientWidth;
+          }
+          spaceToMove = elementsWidth * 100 / elementToMove.clientWidth
+          elementToMove.style.transform = `translateX(-${spaceToMove}%)`;
+          console.log(elementToMove.style.transform);
+        } else elementToMove.style.transform = `translateX(0%)`;
+        
+      }
+    } 
+    }
+}
