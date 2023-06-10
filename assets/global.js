@@ -1011,8 +1011,7 @@ let distanceFromLeft = 0;
 
 for (let i = 0; i < slides.length; i++) {
 
-
- // if (i > 0) sliderContainerFreeSpace += (sliderContainerWidth - totalSlidesWidth) / slides.length; 
+ 
   if (i == 0) slides[i].className += " selected_slide";
   slides[i].style.left = `${distanceFromLeft}px`; 
 
@@ -1020,8 +1019,7 @@ for (let i = 0; i < slides.length; i++) {
   
   distanceFromLeft +=  slides[i].clientWidth; 
 
- // sliderContainerFreeSpace = sliderContainerFreeSpace + slides[i].clientWidth;
-   
+
 }
 
 let prevButton = document.getElementsByClassName('prev-button-slider')
