@@ -37,6 +37,7 @@ body {
 
 .slide {
     position: absolute;
+    padding: 0px 60.25px;
 }
 
 .info_block {
