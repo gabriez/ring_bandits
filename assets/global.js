@@ -993,8 +993,8 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
   } 
 }
 
-let sliderTest = document.getElementById('slider-information-container');
-let sliderTestWidth = sliderTest.clientWidth;
+let sliderTest = document.getElementsByClassName('slider_viewport');
+let sliderTestWidth = sliderTest[0].clientWidth;
 
 let sliderContainer = document.getElementsByClassName('slider_container')
 let slides = document.getElementsByClassName('slide');
