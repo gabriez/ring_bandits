@@ -1073,7 +1073,7 @@ class SliderSelfMade extends HTMLElement {
 
       for (let i = 0; i < slider_children_slides.length; i++) {
         if (i == 0) slider_children_slides [i].className += " selected_slide";
-        slider_children_slides [i].style.left = `${distanceFromLeft}px`; 
+        slider_children_slides[i].style.left = `${distanceFromLeft}px`; 
            
         distanceFromLeft +=  slider_children_slides [i].clientWidth; 
       }
