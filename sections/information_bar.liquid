@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <section class="information_bar">
     <div class="info_block_container" id="slider-information-container">
         <div class="slider_viewport">
@@ -83,4 +84,91 @@
             }
         ]
     }
+=======
+<section class="information_bar">
+    <div class="info_block_container" id="slider-information-container">
+        <div class="slider_viewport">
+            <div class="slider_container">
+                <div class="info_block slide">
+                    {% render 'icons_bandits', icon: 'ring' %}
+                    <span class="info_text">
+                        {{ section.settings.text_1 }}
+                    </span>
+                </div>
+                <div class="info_block slide">
+                    {% render 'icons_bandits', icon: 'wallet' %}
+                    <span class="info_text">
+                        {{ section.settings.text_2 }}
+                    </span>
+                </div>
+                <div class="info_block slide">
+                    {% render 'icons_bandits', icon: 'water' %}
+                    <span class="info_text">
+                        {{ section.settings.text_3 }}
+                    </span>
+                </div>
+                <div class="info_block slide">
+                    {% render 'icons_bandits', icon: 'small-heart' %}
+                    <span class="info_text">
+                        {{ section.settings.text_4 }}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <button class="prev-button-slider button-slider">
+            <svg
+                width="8"
+                height="13"
+                viewBox="0 0 7 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.104 10.8184L1.0001 5.71446L6.104 0.610556" stroke="#8E8E8E" />
+            </svg>
+        </button>
+        <button class="next-button-slider button-slider">
+            <svg
+                width="8"
+                height="13"
+                viewBox="0 0 7 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.895996 0.610352L5.9999 5.71425L0.895996 10.8182" stroke="#8E8E8E" />
+            </svg>
+        </button>
+    </div>
+
+</section>
+{% schema %}
+    {
+        "name": "Information bar",
+        "settings": [
+            {
+                "type": "text",
+                "id": "text_1",
+                "label": "Text for first icon",
+                "default": "Protect your Jewelry"
+            }, {
+                "type": "text",
+                "id": "text_2",
+                "label": "Text for first icon",
+                "default": "Hidden, Secure Pocket"
+            }, {
+                "type": "text",
+                "id": "text_3",
+                "label": "Text for first icon",
+                "default": "Water Friendly + Washable"
+            }, {
+                "type": "text",
+                "id": "text_4",
+                "label": "Text for first icon",
+                "default": "Homegrown Brand + High-Quality Materials"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Information bar"
+            }
+        ]
+    }
+>>>>>>> 41cabaf8a5ed96999d227108d0e9d2acba7d199e
 {% endschema %}

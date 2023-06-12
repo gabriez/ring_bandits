@@ -1113,8 +1113,7 @@ class SliderSelfMade extends HTMLElement {
           elementToMove.style.transform = `translateX(-${spaceToMove}%)`;
           console.log(elementToMove.style.transform);
         } else elementToMove.style.transform = `translateX(0%)`;
-        
       }
-    } 
     }
-}
+  }
+}  
