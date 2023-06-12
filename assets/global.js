@@ -966,6 +966,7 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
         i = elements.length;
       }
   }
+<<<<<<< HEAD
 
   if (elementIndex > -1 && elementIndex < elements.length ){
     if (prev_next && elementIndex != elements.length - 1) {
@@ -973,6 +974,46 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
       for (let i = 0; i < elementIndex + 1; i++) {
         elementsWidth += elements[i].clientWidth;
       }
+
+      spaceToMove = elementsWidth * 100 / elementToMove.clientWidth;
+      elements[elementIndex + 1].className += " selected_slide";
+      elementToMove.style.transform = `translateX(-${spaceToMove}%)`;
+    } else if (!prev_next) {
+      if (elementIndex > 0 ) {
+        elements[elementIndex].className = elements[elementIndex].className.replace(regexSelectedSlide, '');
+        elements[elementIndex - 1].className += " selected_slide";
+        for (let i = 0; i < elementIndex - 1; i++) {
+          elementsWidth += elements[i].clientWidth;
+        }
+        spaceToMove = elementsWidth * 100 / elementToMove.clientWidth
+        elementToMove.style.transform = `translateX(-${spaceToMove}%)`;
+        console.log(elementToMove.style.transform);
+      } else elementToMove.style.transform = `translateX(0%)`;
+      
+    }
+  } 
+}
+
+let slider_move = document.getElementsByClassName('slider_container')
+let slides = document.getElementsByClassName('slide');
+sliderContainer[0].style.height = `${slides[0].clientHeight}px`
+
+let distanceFromLeft = 0;
+
+for (let i = 0; i < slides.length; i++) {
+
+ 
+  if (i == 0) slides[i].className += " selected_slide";
+  slides[i].style.left = `${distanceFromLeft}px`; 
+=======
+
+  if (elementIndex > -1 && elementIndex < elements.length ){
+    if (prev_next && elementIndex != elements.length - 1) {
+      elements[elementIndex].className = elements[elementIndex].className.replace(regexSelectedSlide, '');
+      for (let i = 0; i < elementIndex + 1; i++) {
+        elementsWidth += elements[i].clientWidth;
+      }
+>>>>>>> 41cabaf8a5ed96999d227108d0e9d2acba7d199e
 
       spaceToMove = elementsWidth * 100 / elementToMove.clientWidth;
       elements[elementIndex + 1].className += " selected_slide";
@@ -1017,36 +1058,108 @@ for (let i = 0; i < slides.length; i++) {
 
 }
 
+<<<<<<< HEAD
+  
+  distanceFromLeft +=  slides[i].clientWidth; 
+
+
+}
+
 let prevButton = document.getElementsByClassName('prev-button-slider')
 let nextButton = document.getElementsByClassName('next-button-slider')
 
 prevButton[0].addEventListener('click', () => changeSlidePosition(slides, slider_move, false));
 nextButton[0].addEventListener('click', () => changeSlidePosition(slides, slider_move, true));
 
+=======
+let prevButton = document.getElementsByClassName('prev-button-slider')
+let nextButton = document.getElementsByClassName('next-button-slider')
+
+prevButton[0].addEventListener('click', () => changeSlidePosition(slides, slider_move, false));
+nextButton[0].addEventListener('click', () => changeSlidePosition(slides, slider_move, true));
+
+>>>>>>> 41cabaf8a5ed96999d227108d0e9d2acba7d199e
 
 
 
 class SliderSelfMade extends HTMLElement {
   constructor(sliderContainer){
     this.slider_container = sliderContainer; 
+<<<<<<< HEAD
+    this.slider_children_slides = this.slider_container.children;
+
+    this.initSlider();
+
+    this.slider_move = this.slider_container.children[0].children[0];
+    this.slider_move.style.height = `${this.slider_children_slides[0].clientHeight}px`;
+
+    this.prevButton = this.slider_container.children[1];
+    this.nextButton = this.slider_container.children[2];
+
+    this.prevButton.addEventListener('click', this.changeSlidePosition.bind(this));
+    this.nextButton.addEventListener('click', this.changeSlidePosition.bind(this));
+  }
+
+  initSlider() {
+    let slider_children_slides = this.slider_children_slides;
+    let distanceFromLeft = 0;
+=======
     this.initSlider();
     this.slider_move = document.getElementsByClassName('slider_move_container');
   }
 
   initSlider() {
     let slider_children_slides = this.slider_container.children;
+>>>>>>> 41cabaf8a5ed96999d227108d0e9d2acba7d199e
 
     this.slider_container.children = `
       <div class="slider_viewport">
         <div class="slider_move_container">
           ${slider_children_slides.map(item => item.outerHTML)}
         </div>
+<<<<<<< HEAD
+        <button class="prev-button-slider button-slider">
+            <svg
+                width="8"
+                height="13"
+                viewBox="0 0 7 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.104 10.8184L1.0001 5.71446L6.104 0.610556" stroke="#8E8E8E" />
+            </svg>
+        </button>
+        <button class="next-button-slider button-slider">
+            <svg
+                width="8"
+                height="13"
+                viewBox="0 0 7 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.895996 0.610352L5.9999 5.71425L0.895996 10.8182" stroke="#8E8E8E" />
+            </svg>
+        </button>
+      </div>`;
+
+      for (let i = 0; i < slider_children_slides.length; i++) {
+        if (i == 0) slider_children_slides [i].className += " selected_slide";
+        slider_children_slides [i].style.left = `${distanceFromLeft}px`; 
+           
+        distanceFromLeft +=  slider_children_slides [i].clientWidth; 
+      }
+        
+  }
+
+  changeSlidePosition(event) {
+    let elementToMove = this.slider_move;
+    let elements = this.slider_children_slides;
+=======
       </div>`;
   }
 
   changeSlidePosition() {
     let elementToMove = slideContainerMove[0];
     let elements = slidesMoving;
+>>>>>>> 41cabaf8a5ed96999d227108d0e9d2acba7d199e
     let regexSelectedSlide = / selected_slide/;
     let elementIndex = -1;
     let spaceToMove = 0;
@@ -1059,7 +1172,11 @@ class SliderSelfMade extends HTMLElement {
     }
 
     if (elementIndex > -1 && elementIndex < elements.length ){
+<<<<<<< HEAD
+      if (event.currentTarget.name == "next" && elementIndex != elements.length - 1) {
+=======
       if (prev_next && elementIndex != elements.length - 1) {
+>>>>>>> 41cabaf8a5ed96999d227108d0e9d2acba7d199e
         elements[elementIndex].className = elements[elementIndex].className.replace(regexSelectedSlide, '');
         for (let i = 0; i < elementIndex + 1; i++) {
           elementsWidth += elements[i].clientWidth;
@@ -1068,9 +1185,15 @@ class SliderSelfMade extends HTMLElement {
         spaceToMove = elementsWidth * 100 / elementToMove.clientWidth;
         elements[elementIndex + 1].className += " selected_slide";
         elementToMove.style.transform = `translateX(-${spaceToMove}%)`;
+<<<<<<< HEAD
+      } else if (event.currentTarget.name == "prev") {
+        if (elementIndex > 0 ) {
+          elements[elementIndex].className = elements[elementIndex].className.replace(regexSelectedSlide, '');
+=======
       } else if (!prev_next) {
         if (elementIndex > 0 ) {
           elements[elementIndex].className = elements[elementIndex].className.replace(/ selected_slide/, '');
+>>>>>>> 41cabaf8a5ed96999d227108d0e9d2acba7d199e
           elements[elementIndex - 1].className += " selected_slide";
           for (let i = 0; i < elementIndex - 1; i++) {
             elementsWidth += elements[i].clientWidth;
