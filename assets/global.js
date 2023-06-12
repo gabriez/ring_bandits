@@ -995,7 +995,7 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
 
 let slider_move = document.getElementsByClassName('slider_container')
 let slides = document.getElementsByClassName('slide');
-sliderContainer[0].style.height = `${slides[0].clientHeight}px`
+slider_move[0].style.height = `${slides[0].clientHeight}px`
 
 let distanceFromLeft = 0;
 
