@@ -1023,6 +1023,8 @@ nextButton[0].addEventListener('click', () => changeSlidePosition(slides, slider
 
 class SliderSelfMade extends HTMLElement {
   constructor(sliderContainer){
+    super(sliderContainer)
+
     this.slider_container = sliderContainer; 
     this.slider_children_slides = this.slider_container.children;
 
