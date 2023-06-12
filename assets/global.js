@@ -993,30 +993,30 @@ const changeSlidePosition = (slidesMoving, slideContainerMove, prev_next) => {
   } 
 }
 
-let slider_move = document.getElementsByClassName('slider_container')
-let slides = document.getElementsByClassName('slide');
-slider_move[0].style.height = `${slides[0].clientHeight}px`
+// let slider_move = document.getElementsByClassName('slider_container');
+// let slides = document.getElementsByClassName('slide');
+// slider_move[0].style.height = `${slides[0].clientHeight}px`
 
-let distanceFromLeft = 0;
+// let distanceFromLeft = 0;
 
-for (let i = 0; i < slides.length; i++) {
+// for (let i = 0; i < slides.length; i++) {
 
  
-  if (i == 0) slides[i].className += " selected_slide";
-  slides[i].style.left = `${distanceFromLeft}px`; 
+//   if (i == 0) slides[i].className += " selected_slide";
+//   slides[i].style.left = `${distanceFromLeft}px`; 
 
 
   
-  distanceFromLeft +=  slides[i].clientWidth; 
+//   distanceFromLeft +=  slides[i].clientWidth; 
 
 
-}
+// }
 
-let prevButton = document.getElementsByClassName('prev-button-slider')
-let nextButton = document.getElementsByClassName('next-button-slider')
+// let prevButton = document.getElementsByClassName('prev-button-slider')
+// let nextButton = document.getElementsByClassName('next-button-slider')
 
-prevButton[0].addEventListener('click', () => changeSlidePosition(slides, slider_move, false));
-nextButton[0].addEventListener('click', () => changeSlidePosition(slides, slider_move, true));
+// prevButton[0].addEventListener('click', () => changeSlidePosition(slides, slider_move, false));
+// nextButton[0].addEventListener('click', () => changeSlidePosition(slides, slider_move, true));
 
 
 
@@ -1121,3 +1121,5 @@ class SliderSelfMade extends HTMLElement {
     } 
   }
 }
+
+let newSliderTry = new SliderSelfMade(document.getElementById('slider-information-container'));
